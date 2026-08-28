@@ -1,10 +1,10 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
 from src.config import Config
-# from src.modules.auth.routes import auth_bp
-# from src.modules.movies.routes import movies_bp
-# from src.modules.profile.routes import profile_bp
-# from src.modules.playlist.routes import playlist_bp
+from src.modules.auth.routes import auth_bp
+from src.modules.movies.routes import movies_bp
+from src.modules.profile.routes import profile_bp
+from src.modules.playlist.routes import playlist_bp
 from src.shared.errors import error_handler
 import logging
 
@@ -24,10 +24,10 @@ def create_app():
         return jsonify({'status': 'ok', 'server': 'python'}), 200
     
     # Registrar blueprints (comentados por ahora)
-    # app.register_blueprint(auth_bp, url_prefix='')
-    # app.register_blueprint(movies_bp, url_prefix='')
-    # app.register_blueprint(profile_bp, url_prefix='')
-    # app.register_blueprint(playlist_bp, url_prefix='')
+    app.register_blueprint(auth_bp, url_prefix='')
+    app.register_blueprint(movies_bp, url_prefix='')
+    app.register_blueprint(profile_bp, url_prefix='')
+    app.register_blueprint(playlist_bp, url_prefix='')
     
     # Manejo de errores global
     app.errorhandler(Exception)(error_handler)
