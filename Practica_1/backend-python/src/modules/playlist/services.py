@@ -153,3 +153,41 @@ class PlaylistService:
             fetch_one=True
         )
         return result is not None
+
+    @staticmethod
+    def get_playlist_count(user_id):
+        """Obtiene el número de películas en la lista de reproducción del usuario"""
+        try:
+            print(f"🔍 PlaylistService.get_playlist_count({user_id})")
+            
+            # Validar que user_id sea un número
+            if not user_id or not str(user_id).isdigit():
+                raise ValidationError('ID de usuario inválido')
+            
+            user_id = int(user_id)
+            
+            # Verificar que el usuario existe
+            user = db.execute_query(
+                "SELECT id FROM usuarios WHERE id = %s",
+                (user_id,),
+                fetch_one=True
+            )
+            if not user:
+                raise NotFoundError(f'Usuario con ID {user_id} no encontrado')
+            
+            # Contar películas en la playlist
+            result = db.execute_query(
+                "SELECT COUNT(*) as count FROM lista_reproduccion WHERE usuario_id = %s",
+                (user_id,),
+                fetch_one=True
+            )
+            
+            print(f"🔍 Resultado: {result}")
+            count = result['count'] if result else 0
+            print(f"✅ Count: {count}")
+            return count
+            
+        except Exception as e:
+            print(f"❌ Error en get_playlist_count: {e}")
+            traceback.print_exc()
+            raise
