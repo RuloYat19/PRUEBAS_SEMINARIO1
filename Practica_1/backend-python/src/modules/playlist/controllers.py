@@ -16,27 +16,44 @@ class PlaylistController:
 
     @staticmethod
     def add_to_playlist():
-        """POST /playlist - Agrega una película a la lista de reproducción"""
-        data = request.get_json()
-        if not data:
-            raise ValidationError('Se requiere JSON en el body')
-        
-        user_id = data.get('userId')
-        movie_id = data.get('movieId')
-        
-        if not user_id:
-            raise ValidationError('userId es requerido')
-        if not movie_id:
-            raise ValidationError('movieId es requerido')
-        
         try:
-            user_id = int(user_id)
-            movie_id = int(movie_id)
-        except ValueError:
-            raise ValidationError('userId y movieId deben ser números enteros')
-        
-        playlist_item = PlaylistService.add_to_playlist(user_id, movie_id)
-        return jsonify(playlist_item), 201
+            print("="*50)
+            print("🔍 PLAYLIST CONTROLLER - add_to_playlist")
+            print("="*50)
+            
+            data = request.get_json()
+            print(f"🔍 Datos recibidos: {data}")
+            
+            if not data:
+                raise ValidationError('Se requiere JSON en el body')
+            
+            user_id = data.get('userId')
+            movie_id = data.get('movieId')
+            
+            print(f"🔍 userId: {user_id}, movieId: {movie_id}")
+            
+            if not user_id:
+                raise ValidationError('userId es requerido')
+            if not movie_id:
+                raise ValidationError('movieId es requerido')
+            
+            try:
+                user_id = int(user_id)
+                movie_id = int(movie_id)
+            except ValueError:
+                raise ValidationError('userId y movieId deben ser números enteros')
+            
+            print(f"🔍 Llamando a PlaylistService.add_to_playlist({user_id}, {movie_id})")
+            
+            playlist_item = PlaylistService.add_to_playlist(user_id, movie_id)
+            
+            print(f"✅ Playlist item creado: {playlist_item}")
+            return jsonify(playlist_item), 201
+            
+        except Exception as e:
+            print(f"❌ ERROR EN add_to_playlist CONTROLLER: {e}")
+            traceback.print_exc()
+            raise
 
     @staticmethod
     def remove_from_playlist(playlist_id):

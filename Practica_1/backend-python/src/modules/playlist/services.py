@@ -44,57 +44,81 @@ class PlaylistService:
 
     @staticmethod
     def add_to_playlist(user_id, movie_id):
-        """Agrega una película a la lista de reproducción del usuario"""
-        # Verificar que el usuario existe
-        user = db.execute_query(
-            "SELECT id FROM usuarios WHERE id = %s",
-            (user_id,),
-            fetch_one=True
-        )
-        if not user:
-            raise NotFoundError(f'Usuario con ID {user_id} no encontrado')
-        
-        # Verificar que la película existe y está disponible
-        movie = db.execute_query(
-            "SELECT id, estado FROM peliculas WHERE id = %s",
-            (movie_id,),
-            fetch_one=True
-        )
-        if not movie:
-            raise NotFoundError(f'Película con ID {movie_id} no encontrada')
-        
-        if movie['estado'] != 'DISPONIBLE':
-            raise ValidationError('La película no está disponible para agregar a la lista')
-        
-        # Verificar que no esté ya en la lista
-        existing = db.execute_query(
-            "SELECT id FROM lista_reproduccion WHERE usuario_id = %s AND pelicula_id = %s",
-            (user_id, movie_id),
-            fetch_one=True
-        )
-        if existing:
-            raise ConflictError('La película ya está en tu lista de reproducción')
-        
-        # Agregar a la lista
-        query = """
-            INSERT INTO lista_reproduccion (usuario_id, pelicula_id, fecha_agregado)
-            VALUES (%s, %s, NOW())
-        """
-        db.execute_query(query, (user_id, movie_id))
-        
-        # Obtener el item recién creado
-        playlist_item = db.execute_query(
+        try:
+            print("="*50)
+            print("🔍 PLAYLIST SERVICE - add_to_playlist")
+            print("="*50)
+            print(f"🔍 user_id: {user_id}, movie_id: {movie_id}")
+            
+            # Verificar que el usuario existe
+            print(f"🔍 Verificando usuario ID: {user_id}")
+            user = db.execute_query(
+                "SELECT id FROM usuarios WHERE id = %s",
+                (user_id,),
+                fetch_one=True
+            )
+            print(f"🔍 Resultado usuario: {user}")
+            if not user:
+                raise NotFoundError(f'Usuario con ID {user_id} no encontrado')
+            print(f"✅ Usuario encontrado")
+            
+            # Verificar que la película existe y está disponible
+            print(f"🔍 Verificando película ID: {movie_id}")
+            movie = db.execute_query(
+                "SELECT id, estado FROM peliculas WHERE id = %s",
+                (movie_id,),
+                fetch_one=True
+            )
+            print(f"🔍 Resultado película: {movie}")
+            if not movie:
+                raise NotFoundError(f'Película con ID {movie_id} no encontrada')
+            
+            if movie['estado'] != 'DISPONIBLE':
+                raise ValidationError('La película no está disponible para agregar a la lista')
+            print(f"✅ Película disponible")
+            
+            # Verificar que no esté ya en la lista
+            print(f"🔍 Verificando duplicado en lista_reproduccion...")
+            existing = db.execute_query(
+                "SELECT id FROM lista_reproduccion WHERE usuario_id = %s AND pelicula_id = %s",
+                (user_id, movie_id),
+                fetch_one=True
+            )
+            print(f"🔍 Resultado duplicado: {existing}")
+            if existing:
+                raise ConflictError('La película ya está en tu lista de reproducción')
+            print(f"✅ No está duplicada")
+            
+            # Agregar a la lista
+            print(f"🔍 Insertando en lista_reproduccion...")
+            query = """
+                INSERT INTO lista_reproduccion (usuario_id, pelicula_id, fecha_agregado)
+                VALUES (%s, %s, NOW())
             """
-            SELECT id, usuario_id, pelicula_id, fecha_agregado
-            FROM lista_reproduccion 
-            WHERE usuario_id = %s AND pelicula_id = %s
-            ORDER BY id DESC LIMIT 1
-            """,
-            (user_id, movie_id),
-            fetch_one=True
-        )
-        
-        return dict(playlist_item)
+            result = db.execute_query(query, (user_id, movie_id))
+            print(f"🔍 Resultado INSERT: {result}")
+            print(f"✅ INSERT ejecutado")
+            
+            # Obtener el item recién creado
+            print(f"🔍 Obteniendo el item creado...")
+            playlist_item = db.execute_query(
+                """
+                SELECT id, usuario_id, pelicula_id, fecha_agregado
+                FROM lista_reproduccion 
+                WHERE usuario_id = %s AND pelicula_id = %s
+                ORDER BY id DESC LIMIT 1
+                """,
+                (user_id, movie_id),
+                fetch_one=True
+            )
+            print(f"🔍 Item creado: {playlist_item}")
+            
+            return dict(playlist_item)
+            
+        except Exception as e:
+            print(f"❌ ERROR EN PlaylistService.add_to_playlist: {e}")
+            traceback.print_exc()
+            raise
 
     @staticmethod
     def remove_from_playlist(playlist_id, user_id):
