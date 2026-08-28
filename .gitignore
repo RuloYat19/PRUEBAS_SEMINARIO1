@@ -1,0 +1,15 @@
+# Secretos y credenciales
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Dependencias
+node_modules/
+__pycache__/
+venv/
+
+# Sistema
+.DS_Store
+*.log

@@ -1,0 +1,32 @@
+# === SECRETOS — nada de esto puede llegar a GitHub ===
+*.pem
+*.ppk
+.env
+.env.*
+!.env.example
+*_accessKeys.csv
+*accessKeys*.csv
+credentials
+aws-credentials*
+
+# Dependencias
+node_modules/
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Builds
+dist/
+build/
+.vite/
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*

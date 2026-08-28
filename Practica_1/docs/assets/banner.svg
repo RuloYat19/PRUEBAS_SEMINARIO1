@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="Cloud Cinema — Manual Técnico — Seminario de Sistemas 1, Grupo 8">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#0D0D0F"/>
+      <stop offset="55%"  stop-color="#151518"/>
+      <stop offset="100%" stop-color="#1C1C20"/>
+    </linearGradient>
+
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#7D602C"/>
+      <stop offset="28%"  stop-color="#C69236"/>
+      <stop offset="52%"  stop-color="#E4C477"/>
+      <stop offset="76%"  stop-color="#D6A84B"/>
+      <stop offset="100%" stop-color="#A9823D"/>
+    </linearGradient>
+
+    <radialGradient id="glowGold" cx="0.80" cy="0.18" r="0.75">
+      <stop offset="0%"   stop-color="#C69236" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#C69236" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowRed" cx="0.14" cy="0.92" r="0.68">
+      <stop offset="0%"   stop-color="#B9344A" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#B9344A" stop-opacity="0"/>
+    </radialGradient>
+
+    <clipPath id="card">
+      <rect x="0" y="0" width="1200" height="300" rx="18" ry="18"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <rect width="1200" height="300" fill="url(#base)"/>
+    <rect width="1200" height="300" fill="url(#glowGold)"/>
+    <rect width="1200" height="300" fill="url(#glowRed)"/>
+
+    <!-- filo superior dorado -->
+    <rect x="0" y="0" width="1200" height="4" fill="url(#gold)"/>
+
+    <!-- perforaciones de rollo de cine, borde inferior -->
+    <g fill="#F2F0EB">
+      <rect x="40"   y="266" width="26" height="14" rx="4"/>
+      <rect x="90"   y="266" width="26" height="14" rx="4"/>
+      <rect x="140"  y="266" width="26" height="14" rx="4"/>
+      <rect x="190"  y="266" width="26" height="14" rx="4"/>
+      <rect x="240"  y="266" width="26" height="14" rx="4"/>
+      <rect x="290"  y="266" width="26" height="14" rx="4"/>
+      <rect x="340"  y="266" width="26" height="14" rx="4"/>
+      <rect x="390"  y="266" width="26" height="14" rx="4"/>
+      <rect x="440"  y="266" width="26" height="14" rx="4"/>
+      <rect x="490"  y="266" width="26" height="14" rx="4"/>
+      <rect x="540"  y="266" width="26" height="14" rx="4"/>
+      <rect x="590"  y="266" width="26" height="14" rx="4"/>
+      <rect x="640"  y="266" width="26" height="14" rx="4"/>
+      <rect x="690"  y="266" width="26" height="14" rx="4"/>
+      <rect x="740"  y="266" width="26" height="14" rx="4"/>
+      <rect x="790"  y="266" width="26" height="14" rx="4"/>
+      <rect x="840"  y="266" width="26" height="14" rx="4"/>
+      <rect x="890"  y="266" width="26" height="14" rx="4"/>
+      <rect x="940"  y="266" width="26" height="14" rx="4"/>
+      <rect x="990"  y="266" width="26" height="14" rx="4"/>
+      <rect x="1040" y="266" width="26" height="14" rx="4"/>
+      <rect x="1090" y="266" width="26" height="14" rx="4"/>
+      <rect x="1140" y="266" width="26" height="14" rx="4"/>
+    </g>
+
+    <g font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" text-anchor="middle">
+      <text x="600" y="88" font-size="15" font-weight="600" letter-spacing="6.5" fill="#98989F">
+        LABORATORIO DE SEMINARIO DE SISTEMAS 1
+      </text>
+
+      <text x="600" y="163" font-size="58" font-weight="700" letter-spacing="-0.5" fill="#F2F0EB">
+        Manual Técnico
+      </text>
+
+      <text x="600" y="212" font-size="26" font-weight="600" letter-spacing="4" fill="#E4C477">
+        CLOUD CINEMA
+      </text>
+
+      <text x="600" y="243" font-size="14" font-weight="500" letter-spacing="2.5" fill="#98989F">
+        SECCIÓN B  ·  GRUPO 8  ·  SEGUNDO SEMESTRE 2026
+      </text>
+    </g>
+
+    <!-- filete cereza bajo el titulo -->
+    <rect x="540" y="180" width="120" height="2" rx="1" fill="#B9344A"/>
+
+    <rect x="0" y="0" width="1200" height="300" rx="18" ry="18" fill="none" stroke="#29292E" stroke-width="2"/>
+  </g>
+</svg>

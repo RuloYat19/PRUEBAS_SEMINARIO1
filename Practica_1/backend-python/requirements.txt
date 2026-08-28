@@ -1,0 +1,8 @@
+Flask==3.0.3
+Flask-CORS==4.0.1
+python-dotenv==1.0.1
+boto3==1.34.162
+mysql-connector-python==8.4.0
+Pillow==10.4.0
+python-multipart==0.0.9
+Werkzeug==3.0.4
