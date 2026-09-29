@@ -1,0 +1,70 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VerElInventarioDeRDS",
+      "Effect": "Allow",
+      "Action": [
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBSubnetGroups",
+        "rds:DescribeDBParameterGroups",
+        "rds:DescribeDBParameters",
+        "rds:DescribeDBEngineVersions",
+        "rds:DescribeOrderableDBInstanceOptions",
+        "rds:DescribeDBSnapshots",
+        "rds:DescribeAccountAttributes",
+        "rds:DescribeCertificates",
+        "rds:DescribeEvents",
+        "rds:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CrearYAdministrarUnicamenteLaBaseDeDatosDelGrupo8",
+      "Effect": "Allow",
+      "Action": [
+        "rds:CreateDBInstance",
+        "rds:StartDBInstance",
+        "rds:StopDBInstance",
+        "rds:RebootDBInstance",
+        "rds:ModifyDBInstance",
+        "rds:CreateDBSnapshot",
+        "rds:CreateDBSubnetGroup",
+        "rds:AddTagsToResource"
+      ],
+      "Resource": [
+        "arn:aws:rds:us-east-1:237145860265:db:p2-rds-g8",
+        "arn:aws:rds:us-east-1:237145860265:subgrp:*",
+        "arn:aws:rds:us-east-1:237145860265:pg:*",
+        "arn:aws:rds:us-east-1:237145860265:og:*",
+        "arn:aws:rds:us-east-1:237145860265:snapshot:*"
+      ]
+    },
+    {
+      "Sid": "LecturaDeRedQueExigeElAsistenteDeCreacionDeRDS",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeAccountAttributes",
+        "ec2:DescribeInternetGateways",
+        "kms:ListAliases",
+        "kms:DescribeKey"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "RolVinculadoAlServicioSoloParaRDS",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "arn:aws:iam::*:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "rds.amazonaws.com"
+        }
+      }
+    }
+  ]
+}
