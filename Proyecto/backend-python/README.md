@@ -20,10 +20,10 @@ Instalar dependencias y arrancar el servidor:
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-gunicorn --bind 0.0.0.0:5000 --workers 1 --threads 100 --timeout 0 src.wsgi:app
+gunicorn --bind 0.0.0.0:3000 --workers 1 --threads 100 --timeout 0 src.wsgi:app
 ```
 
-El ALB usa `GET /health` como health check y envía HTTP/WebSocket al puerto 5000. En producción,
+El ALB usa `GET /health` como health check y envía HTTP/WebSocket al puerto 3000. En producción,
 RDS debe aceptar conexiones únicamente desde el security group de las EC2. El pool de conexiones
 MySQL se comparte dentro del proceso Flask.
 

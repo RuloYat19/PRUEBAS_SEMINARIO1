@@ -59,8 +59,8 @@ def create_app(pool=None,lex_client=None):
     app.register_blueprint(create_comentarios_blueprint(comentarios))
     app.register_blueprint(create_traduccion_blueprint(traduccion))
     @app.get("/health")
-    def health(): return jsonify({"status":"ok"}),200
+    def health(): return jsonify({"status":"ok","backend":"python"}),200
     return app
 
 if __name__=="__main__":
-    create_app().run(host="0.0.0.0",port=int(os.getenv("PORT","5000")))
+    create_app().run(host="0.0.0.0",port=int(os.getenv("PORT","3000")))
