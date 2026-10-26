@@ -1,0 +1,77 @@
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--tf-space-3);
+  padding: var(--tf-space-3) var(--tf-space-4);
+  border-radius: var(--tf-radius-md);
+  background: var(--bg);
+  box-shadow: inset 0 0 0 1px var(--border);
+  font-size: var(--tf-type-sm);
+  color: var(--tf-text);
+}
+
+.icon {
+  display: flex;
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--fg);
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.text {
+  color: var(--tf-text-secondary);
+}
+
+.close {
+  margin: -8px -10px -8px 0;
+}
+
+.elevated {
+  background: var(--tf-surface);
+  box-shadow:
+    inset 0 0 0 1px var(--tf-border),
+    var(--tf-shadow-lg);
+  animation: tf-rise var(--tf-duration-slow) var(--tf-ease);
+}
+
+.neutral,
+.accent {
+  --fg: var(--tf-accent);
+  --bg: var(--tf-accent-soft);
+  --border: var(--tf-accent-border);
+}
+
+.sky {
+  --fg: var(--tf-sky);
+  --bg: var(--tf-sky-soft);
+  --border: var(--tf-sky-border);
+}
+
+.success {
+  --fg: var(--tf-success);
+  --bg: var(--tf-success-soft);
+  --border: var(--tf-success-border);
+}
+
+.warning {
+  --fg: var(--tf-warning);
+  --bg: var(--tf-warning-soft);
+  --border: var(--tf-warning-border);
+}
+
+.danger {
+  --fg: var(--tf-danger);
+  --bg: var(--tf-danger-soft);
+  --border: var(--tf-danger-border);
+}

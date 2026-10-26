@@ -1,0 +1,5 @@
+export { createPublicacionesApi } from './publicaciones.api'
+export type { PublicacionesApi, PublicacionesApiConfig } from './publicaciones.api'
+export { PublicacionesPage } from './PublicacionesPage'
+export { TarjetaPublicacion } from './TarjetaPublicacion'
+export type { EtiquetaConTotal, Publicacion } from './publicaciones.types'

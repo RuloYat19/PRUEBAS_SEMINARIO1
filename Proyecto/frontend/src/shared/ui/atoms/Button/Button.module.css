@@ -1,0 +1,127 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tf-space-2);
+  height: var(--tf-control-md);
+  padding-inline: var(--tf-space-5);
+  border: 1px solid transparent;
+  border-radius: var(--tf-radius-md);
+  font-size: var(--tf-type-body);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background var(--tf-duration-fast) var(--tf-ease),
+    border-color var(--tf-duration-fast) var(--tf-ease),
+    color var(--tf-duration-fast) var(--tf-ease),
+    box-shadow var(--tf-duration-fast) var(--tf-ease),
+    transform var(--tf-duration-fast) var(--tf-ease);
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.sm {
+  height: var(--tf-control-sm);
+  padding-inline: var(--tf-space-3);
+  border-radius: var(--tf-radius-sm);
+  font-size: var(--tf-type-sm);
+}
+
+.lg {
+  height: var(--tf-control-lg);
+  padding-inline: var(--tf-space-6);
+  font-size: var(--tf-type-body-lg);
+}
+
+.iconOnly {
+  width: var(--tf-control-md);
+  padding: 0;
+}
+
+.iconOnly.sm {
+  width: var(--tf-control-sm);
+}
+
+.iconOnly.lg {
+  width: var(--tf-control-lg);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.icon {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.loading > :not(.spinner) {
+  visibility: hidden;
+}
+
+.spinner {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.primary {
+  background: var(--tf-accent);
+  color: var(--tf-text-on-accent);
+  box-shadow: var(--tf-shadow-sm);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--tf-accent-hover);
+}
+
+.primary:active:not(:disabled) {
+  background: var(--tf-accent-active);
+}
+
+.secondary {
+  background: var(--tf-surface);
+  border-color: var(--tf-border);
+  color: var(--tf-text);
+  box-shadow: var(--tf-shadow-sm);
+}
+
+.secondary:hover:not(:disabled) {
+  background: var(--tf-surface-hover);
+  border-color: var(--tf-border-strong);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--tf-text-secondary);
+}
+
+.ghost:hover:not(:disabled) {
+  background: var(--tf-surface-hover);
+  color: var(--tf-text);
+}
+
+.danger {
+  background: var(--tf-danger);
+  color: #fff;
+}
+
+[data-theme='dark'] .danger {
+  color: var(--tf-bg);
+}
+
+.danger:hover:not(:disabled) {
+  background: var(--tf-danger-hover);
+}

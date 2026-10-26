@@ -1,0 +1,29 @@
+{
+  "name": "semisocial-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Frontend React de Semi-Social del grupo 8.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "tsc -b --noEmit"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.18.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.2.0"
+  },
+  "overrides": {
+    "rollup": "npm:@rollup/wasm-node@^4.52.0"
+  }
+}

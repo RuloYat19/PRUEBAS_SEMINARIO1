@@ -1,0 +1,20 @@
+.region {
+  position: fixed;
+  z-index: var(--tf-z-toast);
+  inset: calc(var(--tf-header-height) + var(--tf-space-3)) var(--tf-space-4) auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--tf-space-2);
+  pointer-events: none;
+}
+
+.region > * {
+  pointer-events: auto;
+}
+
+@media (min-width: 768px) {
+  .region {
+    inset: calc(var(--tf-header-height) + var(--tf-space-4)) var(--tf-space-6) auto auto;
+    width: 380px;
+  }
+}

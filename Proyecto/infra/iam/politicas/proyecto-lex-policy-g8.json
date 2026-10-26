@@ -1,0 +1,11 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ConversarConElBot",
+      "Effect": "Allow",
+      "Action": ["lex:RecognizeText", "lex:GetSession", "lex:PutSession", "lex:DeleteSession"],
+      "Resource": "arn:aws:lex:us-east-1:237145860265:bot-alias/*/*"
+    }
+  ]
+}

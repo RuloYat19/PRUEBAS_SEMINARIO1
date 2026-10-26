@@ -1,0 +1,40 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tf-space-6);
+  width: 100%;
+  max-width: var(--tf-container-narrow);
+  animation: tf-rise var(--tf-duration-slow) var(--tf-ease);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tf-space-2);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tf-space-4);
+}
+
+.submit {
+  margin-top: var(--tf-space-2);
+}
+
+.footer {
+  text-align: center;
+  font-size: var(--tf-type-sm);
+  color: var(--tf-text-secondary);
+}
+
+.footer a {
+  font-weight: 500;
+  color: var(--tf-accent);
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

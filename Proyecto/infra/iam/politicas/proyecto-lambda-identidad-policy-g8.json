@@ -1,0 +1,32 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CompareFaceForCustomAuth",
+      "Effect": "Allow",
+      "Action": ["rekognition:CompareFaces"],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ReadProfilePhotos",
+      "Effect": "Allow",
+      "Action": ["s3:GetObject"],
+      "Resource": [
+        "arn:aws:s3:::semi1proyecto-g8-2s2026/Fotos_Perfil/*",
+        "arn:aws:s3:::semi1proyecto-g8-2s2026/Fotos_Desafios/*"
+      ]
+    },
+    {
+      "Sid": "DeleteTemporaryFaceImages",
+      "Effect": "Allow",
+      "Action": ["s3:DeleteObject"],
+      "Resource": "arn:aws:s3:::semi1proyecto-g8-2s2026/Fotos_Desafios/*"
+    },
+    {
+      "Sid": "WriteLambdaLogs",
+      "Effect": "Allow",
+      "Action": ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents"],
+      "Resource": "arn:aws:logs:us-east-1:*:log-group:/aws/lambda/proyecto-lambda-identidad-*"
+    }
+  ]
+}

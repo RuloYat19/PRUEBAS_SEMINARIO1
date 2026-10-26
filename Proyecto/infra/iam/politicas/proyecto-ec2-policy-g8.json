@@ -1,0 +1,32 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "EC2yALBSoloEnUsEast1",
+      "Effect": "Allow",
+      "Action": ["ec2:*", "elasticloadbalancing:*"],
+      "Resource": "*",
+      "Condition": { "StringEquals": { "aws:RequestedRegion": "us-east-1" } }
+    },
+    {
+      "Sid": "AsignarSoloElRolDeLasEC2",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::237145860265:role/proyecto-ec2-role-g8",
+      "Condition": { "StringEquals": { "iam:PassedToService": "ec2.amazonaws.com" } }
+    },
+    {
+      "Sid": "VerPerfilesDeInstancia",
+      "Effect": "Allow",
+      "Action": ["iam:ListInstanceProfiles", "iam:GetInstanceProfile"],
+      "Resource": "*"
+    },
+    {
+      "Sid": "RolVinculadoDelALB",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": { "StringEquals": { "iam:AWSServiceName": "elasticloadbalancing.amazonaws.com" } }
+    }
+  ]
+}

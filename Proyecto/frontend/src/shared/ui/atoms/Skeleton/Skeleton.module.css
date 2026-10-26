@@ -1,0 +1,16 @@
+.skeleton {
+  display: block;
+  border-radius: var(--tf-radius-sm);
+  background: linear-gradient(
+    90deg,
+    var(--tf-bg-sunken) 0%,
+    var(--tf-surface-hover) 50%,
+    var(--tf-bg-sunken) 100%
+  );
+  background-size: 200% 100%;
+  animation: tf-shimmer 1.4s linear infinite;
+}
+
+.circle {
+  border-radius: var(--tf-radius-full);
+}

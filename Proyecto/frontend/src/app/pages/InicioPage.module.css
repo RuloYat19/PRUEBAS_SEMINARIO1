@@ -1,0 +1,6 @@
+.extras {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tf-space-3);
+  padding: 0 var(--tf-space-4) var(--tf-space-3);
+}

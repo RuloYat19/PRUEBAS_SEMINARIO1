@@ -1,0 +1,39 @@
+.conversacion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tf-space-2);
+  min-height: 240px;
+}
+
+.pensando {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tf-space-2);
+  font-size: var(--tf-type-xs);
+  color: var(--tf-text-muted);
+}
+
+.sugerencias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tf-space-2);
+}
+
+.sugerencia {
+  padding: var(--tf-space-2) var(--tf-space-3);
+  border: 1px solid var(--tf-sky-border);
+  border-radius: var(--tf-radius-full);
+  background: var(--tf-sky-soft);
+  color: var(--tf-sky);
+  font: inherit;
+  font-size: var(--tf-type-sm);
+  cursor: pointer;
+}
+
+.sugerencia:hover {
+  border-color: var(--tf-sky);
+}
+
+.pie {
+  width: 100%;
+}

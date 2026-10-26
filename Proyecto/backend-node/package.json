@@ -1,0 +1,28 @@
+{
+  "name": "semisocial-backend-node",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend Node.js de Semi-Social (EC2 No.1) del grupo 8.",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env src/server.js",
+    "test": "node --test --test-concurrency=1"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.1156.0",
+    "@aws-sdk/client-lex-runtime-v2": "^3.1156.0",
+    "@aws-sdk/client-rekognition": "^3.700.0",
+    "@aws-sdk/client-s3": "^3.1156.0",
+    "@aws-sdk/client-translate": "^3.1156.0",
+    "express": "^5.1.0",
+    "mysql2": "^3.11.0",
+    "ws": "^8.18.3",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0"
+  }
+}

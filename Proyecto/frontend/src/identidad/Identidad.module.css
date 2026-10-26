@@ -1,0 +1,21 @@
+.foto,
+.rostro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tf-space-3);
+}
+
+.errorFoto {
+  font-size: var(--tf-type-xs);
+  color: var(--tf-danger);
+}
+
+.comparando {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tf-space-2);
+  padding: var(--tf-space-8) 0;
+  font-size: var(--tf-type-sm);
+  color: var(--tf-text-secondary);
+}

@@ -1,0 +1,31 @@
+.pagina {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tf-space-5);
+  max-width: 640px;
+}
+
+.seccion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tf-space-3);
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tf-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  padding: var(--tf-space-3) var(--tf-space-4);
+  animation: tf-rise var(--tf-duration-slow) var(--tf-ease) both;
+}
+
+.vacio {
+  font-size: var(--tf-type-sm);
+  color: var(--tf-text-muted);
+}

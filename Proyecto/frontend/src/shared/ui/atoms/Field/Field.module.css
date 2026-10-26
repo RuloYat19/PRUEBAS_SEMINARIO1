@@ -1,0 +1,126 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.label {
+  font-size: var(--tf-type-sm);
+  font-weight: 500;
+  color: var(--tf-text);
+}
+
+.optional {
+  margin-left: 6px;
+  font-weight: 400;
+  color: var(--tf-text-muted);
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: var(--tf-type-xs);
+  color: var(--tf-text-secondary);
+}
+
+.message svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.error {
+  color: var(--tf-danger);
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  gap: var(--tf-space-2);
+  min-height: var(--tf-control-md);
+  padding-inline: var(--tf-space-3);
+  background: var(--tf-surface);
+  border: 1px solid var(--tf-border);
+  border-radius: var(--tf-radius-md);
+  box-shadow: var(--tf-shadow-sm);
+  transition:
+    border-color var(--tf-duration-fast) var(--tf-ease),
+    box-shadow var(--tf-duration-fast) var(--tf-ease);
+}
+
+.control:hover {
+  border-color: var(--tf-border-strong);
+}
+
+.control:focus-within {
+  border-color: var(--tf-accent);
+  box-shadow: 0 0 0 4px var(--tf-focus-ring);
+}
+
+.field[data-invalid] .control {
+  border-color: var(--tf-danger-border);
+}
+
+.field[data-invalid] .control:focus-within {
+  border-color: var(--tf-danger);
+  box-shadow: 0 0 0 4px var(--tf-danger-soft);
+}
+
+.field[data-disabled] {
+  opacity: 0.5;
+}
+
+.adornment {
+  display: flex;
+  flex-shrink: 0;
+  color: var(--tf-text-muted);
+}
+
+.control:focus-within .adornment {
+  color: var(--tf-accent);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font-size: var(--tf-type-control);
+  caret-color: var(--tf-accent);
+}
+
+.input:focus-visible {
+  outline: 0;
+}
+
+.input:disabled {
+  cursor: not-allowed;
+}
+
+.trailing {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-right: -6px;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: var(--tf-radius-sm);
+  color: var(--tf-text-muted);
+  cursor: pointer;
+}
+
+.trailing:hover {
+  color: var(--tf-text);
+  background: var(--tf-surface-hover);
+}
+
+@media (min-width: 768px) {
+  .input {
+    font-size: var(--tf-type-body);
+  }
+}

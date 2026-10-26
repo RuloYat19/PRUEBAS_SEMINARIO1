@@ -1,0 +1,17 @@
+.surface {
+  min-width: 0;
+  background: var(--tf-surface);
+  border: 1px solid var(--tf-border);
+  border-radius: var(--tf-radius-lg);
+}
+
+.interactive {
+  transition:
+    border-color var(--tf-duration-base) var(--tf-ease),
+    box-shadow var(--tf-duration-base) var(--tf-ease);
+}
+
+.interactive:hover {
+  border-color: var(--tf-border-strong);
+  box-shadow: var(--tf-shadow-md);
+}

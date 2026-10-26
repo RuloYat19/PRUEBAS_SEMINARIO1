@@ -1,0 +1,31 @@
+# MySQL local para desarrollar sin gastar horas de RDS (fases 0 a 2).
+# Misma versión mayor que `proyecto-rds-g8` y el mismo esquema.
+#
+#   docker compose -f Proyecto/database/docker-compose.yml up -d
+#   docker compose -f Proyecto/database/docker-compose.yml down -v   # borra los datos y vuelve a cargar el esquema
+#
+# Los scripts de /docker-entrypoint-initdb.d solo corren la primera vez,
+# cuando el volumen está vacío. Para recargar el seed sin borrar nada:
+#   docker exec -i semisocial-mysql mysql -uroot -proot < Proyecto/database/seed.sql
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: semisocial-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: semisocial
+      MYSQL_USER: semisocial
+      MYSQL_PASSWORD: semisocial
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./seed.sql:/docker-entrypoint-initdb.d/02-seed.sql:ro
+      - semisocial-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 5s
+      retries: 20
+
+volumes:
+  semisocial-data:

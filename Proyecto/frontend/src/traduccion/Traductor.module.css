@@ -1,0 +1,74 @@
+.traductor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tf-space-2);
+}
+
+.idiomas {
+  display: flex;
+  align-items: center;
+  gap: var(--tf-space-1);
+  color: var(--tf-text-muted);
+}
+
+.idioma {
+  min-width: 34px;
+  height: 26px;
+  padding-inline: var(--tf-space-2);
+  border: 1px solid var(--tf-border);
+  border-radius: var(--tf-radius-full);
+  background: transparent;
+  color: var(--tf-text-secondary);
+  font-family: var(--tf-font-mono);
+  font-size: var(--tf-type-xs);
+  cursor: pointer;
+  transition:
+    background var(--tf-duration-fast) var(--tf-ease),
+    border-color var(--tf-duration-fast) var(--tf-ease),
+    color var(--tf-duration-fast) var(--tf-ease);
+}
+
+.idioma:hover {
+  border-color: var(--tf-border-strong);
+  color: var(--tf-text);
+}
+
+.idioma[aria-pressed='true'] {
+  border-color: var(--tf-sky-border);
+  background: var(--tf-sky-soft);
+  color: var(--tf-sky);
+}
+
+.resultado {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tf-space-1);
+  padding: var(--tf-space-3);
+  border-left: 2px solid var(--tf-sky);
+  border-radius: 0 var(--tf-radius-sm) var(--tf-radius-sm) 0;
+  background: var(--tf-sky-soft);
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  animation: tf-rise var(--tf-duration-slow) var(--tf-ease);
+}
+
+.origen {
+  font-size: var(--tf-type-xs);
+  color: var(--tf-text-muted);
+}
+
+.original {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--tf-sky);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.error {
+  font-size: var(--tf-type-xs);
+  color: var(--tf-danger);
+}

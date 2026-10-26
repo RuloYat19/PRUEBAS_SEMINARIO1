@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "TraducirTexto",
+      "Effect": "Allow",
+      "Action": "translate:TranslateText",
+      "Resource": "*"
+    },
+    {
+      "Sid": "DetectarIdiomaConSourceAuto",
+      "Effect": "Allow",
+      "Action": "comprehend:DetectDominantLanguage",
+      "Resource": "*"
+    }
+  ]
+}

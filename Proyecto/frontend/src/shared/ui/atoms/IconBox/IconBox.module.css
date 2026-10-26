@@ -1,0 +1,40 @@
+.box {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: var(--size);
+  height: var(--size);
+  border-radius: calc(var(--size) * 0.3);
+  color: var(--fg);
+  background: var(--bg);
+}
+
+.neutral {
+  --fg: var(--tf-text-secondary);
+  --bg: var(--tf-bg-sunken);
+}
+
+.accent {
+  --fg: var(--tf-accent);
+  --bg: var(--tf-accent-soft);
+}
+
+.sky {
+  --fg: var(--tf-sky);
+  --bg: var(--tf-sky-soft);
+}
+
+.success {
+  --fg: var(--tf-success);
+  --bg: var(--tf-success-soft);
+}
+
+.warning {
+  --fg: var(--tf-warning);
+  --bg: var(--tf-warning-soft);
+}
+
+.danger {
+  --fg: var(--tf-danger);
+  --bg: var(--tf-danger-soft);
+}

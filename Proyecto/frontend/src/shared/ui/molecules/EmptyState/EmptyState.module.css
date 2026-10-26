@@ -1,0 +1,20 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--tf-space-3);
+  padding: var(--tf-space-10) var(--tf-space-6);
+  text-align: center;
+  border: 1px dashed var(--tf-border-strong);
+  border-radius: var(--tf-radius-lg);
+}
+
+.text {
+  max-width: 34ch;
+  color: var(--tf-text-secondary);
+  font-size: var(--tf-type-sm);
+}
+
+.action {
+  margin-top: var(--tf-space-2);
+}

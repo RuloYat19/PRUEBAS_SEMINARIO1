@@ -1,0 +1,10 @@
+.composer {
+  display: flex;
+  align-items: center;
+  gap: var(--tf-space-2);
+}
+
+.caja {
+  flex: 1;
+  min-width: 0;
+}

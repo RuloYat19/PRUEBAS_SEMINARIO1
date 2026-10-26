@@ -1,0 +1,9 @@
+.main {
+  padding-bottom: calc(var(--tf-tabbar-height) + env(safe-area-inset-bottom) + var(--tf-space-8));
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding-bottom: var(--tf-space-16);
+  }
+}

@@ -1,0 +1,56 @@
+.group {
+  display: inline-flex;
+  gap: 2px;
+  max-width: 100%;
+  padding: 3px;
+  overflow-x: auto;
+  background: var(--tf-bg-sunken);
+  border-radius: var(--tf-radius-md);
+  scrollbar-width: none;
+}
+
+.fullWidth {
+  display: flex;
+  width: 100%;
+}
+
+.fullWidth .option {
+  flex: 1;
+}
+
+.option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: var(--tf-control-sm);
+  padding-inline: var(--tf-space-3);
+  border: 0;
+  border-radius: var(--tf-radius-sm);
+  background: transparent;
+  color: var(--tf-text-secondary);
+  font-size: var(--tf-type-sm);
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background var(--tf-duration-base) var(--tf-ease),
+    color var(--tf-duration-base) var(--tf-ease),
+    box-shadow var(--tf-duration-base) var(--tf-ease);
+}
+
+.option:hover {
+  color: var(--tf-text);
+}
+
+.option[aria-pressed='true'] {
+  background: var(--tf-surface);
+  color: var(--tf-text);
+  box-shadow: var(--tf-shadow-sm);
+}
+
+.count {
+  font-family: var(--tf-font-mono);
+  font-size: var(--tf-type-xs);
+  color: var(--tf-text-muted);
+}

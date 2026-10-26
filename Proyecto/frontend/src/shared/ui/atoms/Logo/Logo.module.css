@@ -1,0 +1,39 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tf-space-2);
+  color: var(--tf-text);
+}
+
+.mark {
+  flex-shrink: 0;
+  width: var(--mark);
+  height: var(--mark);
+  color: var(--tf-accent);
+}
+
+.wordmark {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  font-family: var(--tf-font-display);
+  font-size: var(--word);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.sub {
+  font-style: italic;
+  color: var(--tf-accent);
+}
+
+.sm {
+  --mark: 26px;
+  --word: 21px;
+}
+
+.md {
+  --mark: 32px;
+  --word: 26px;
+}

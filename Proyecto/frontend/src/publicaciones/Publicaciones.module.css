@@ -1,0 +1,201 @@
+/* Usa los tokens --tf-* del diseño de la Práctica 2 (shared/ui), con respaldo por si aún no están. */
+
+.pagina {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.crear,
+.filtros,
+.tarjeta {
+  background: var(--tf-surface, #ffffff);
+  border: 1px solid var(--tf-border, #e1e5e0);
+  border-radius: 12px;
+}
+
+.crear {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.titulo {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.selectorImagen {
+  display: grid;
+  place-items: center;
+  min-height: 140px;
+  border: 1px dashed var(--tf-border-strong, #c9d0ca);
+  border-radius: 10px;
+  color: var(--tf-text-secondary, #56625c);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.vistaPrevia {
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+}
+
+.descripcion {
+  min-height: 70px;
+  padding: 0.6rem;
+  border: 1px solid var(--tf-border, #e1e5e0);
+  border-radius: 8px;
+  font: inherit;
+  resize: vertical;
+}
+
+.boton {
+  justify-self: end;
+  padding: 0.55rem 1.1rem;
+  border: 0;
+  border-radius: 8px;
+  background: var(--tf-accent, #2e6b57);
+  color: var(--tf-text-on-accent, #f6fbf8);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.boton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.filtros {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+}
+
+.buscador {
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--tf-border, #e1e5e0);
+  border-radius: 8px;
+  font: inherit;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.chip {
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--tf-border-strong, #c9d0ca);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--tf-text, #16201c);
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.chip[aria-pressed='true'] {
+  border-color: var(--tf-accent, #2e6b57);
+  background: var(--tf-accent-soft, rgba(46, 107, 87, 0.08));
+  color: var(--tf-accent, #2e6b57);
+  font-weight: 600;
+}
+
+.total {
+  color: var(--tf-text-muted, #8a948f);
+  font-size: 0.8em;
+}
+
+.feed {
+  display: grid;
+  gap: 1rem;
+}
+
+.feed[aria-busy='true'] {
+  opacity: 0.6;
+}
+
+.tarjeta {
+  overflow: hidden;
+}
+
+.autor {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0.75rem 1rem;
+}
+
+.autor > div {
+  display: grid;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--tf-bg-sunken, #eef0ec);
+}
+
+.fecha {
+  color: var(--tf-text-muted, #8a948f);
+  font-size: 0.8rem;
+}
+
+.imagen {
+  display: block;
+  width: 100%;
+  max-height: 560px;
+  object-fit: cover;
+  background: var(--tf-bg-sunken, #eef0ec);
+}
+
+.texto {
+  margin: 0;
+  padding: 0.75rem 1rem 0;
+  white-space: pre-wrap;
+}
+
+.etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0.6rem 1rem 0;
+  list-style: none;
+}
+
+.etiqueta {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--tf-sky, #3f679c);
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.pie {
+  padding: 0.6rem 1rem 0.85rem;
+  color: var(--tf-text-secondary, #56625c);
+  font-size: 0.85rem;
+}
+
+.vacio {
+  color: var(--tf-text-muted, #8a948f);
+  text-align: center;
+}
+
+.error {
+  margin: 0;
+  color: var(--tf-danger, #a33a3a);
+  font-size: 0.9rem;
+}

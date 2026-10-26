@@ -1,0 +1,34 @@
+.fila {
+  display: flex;
+  align-items: center;
+  gap: var(--tf-space-3);
+  min-width: 0;
+}
+
+.texto {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.nombre {
+  overflow: hidden;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.detalle {
+  overflow: hidden;
+  font-size: var(--tf-type-xs);
+  color: var(--tf-text-muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.acciones {
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--tf-space-2);
+}

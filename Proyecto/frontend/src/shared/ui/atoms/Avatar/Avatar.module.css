@@ -1,0 +1,23 @@
+.avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: var(--size);
+  height: var(--size);
+  overflow: hidden;
+  border-radius: var(--tf-radius-full);
+  background: var(--tf-accent-soft);
+  color: var(--tf-accent);
+  font-size: calc(var(--size) * 0.38);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow:
+    0 0 0 2px var(--tf-surface),
+    0 0 0 3px var(--tf-border);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
